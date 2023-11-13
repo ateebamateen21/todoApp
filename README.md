@@ -18,13 +18,19 @@ git clone https://github.com/ateebamateen21/todoapp.git
  ```
 
 2. Navigate into the directory
-```cd todoapp```
+```bash 
+cd todoapp
+```
 
 3. Install the dependencies
-```npm install```
+```bash
+npm install
+```
 
 4. Run the app
-```npm run dev```
+```bash
+npm run dev
+```
 
 
 ## Usage
