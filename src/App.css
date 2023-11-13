@@ -9,7 +9,7 @@
 body {
   background: linear-gradient(
     90deg,
-    rgba(48, 16, 255, 1) 0%,
+    rgb(107, 92, 211) 0%,
     rgba(100, 115, 255, 1) 100%
   );
 }
@@ -19,7 +19,7 @@ body {
   justify-content: start;
   width: 520px;
   min-height: 600px;
-  background: #161a2b;
+  background: #262c46;
   text-align: center;
   margin: 128px auto;
   border-radius: 10px;
@@ -63,22 +63,22 @@ h1 {
   outline: none;
   background: linear-gradient(
     90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
+    rgb(154, 108, 245) 0%,
+    rgb(181, 91, 238) 100%
   );
   color: #fff;
   text-transform: capitalize;
 }
 
 .todo-input.edit {
-  border: 2px solid #149fff;
+  border: 2px solid #1d83cc;
 }
 
 .todo-button.edit {
   background: linear-gradient(
     90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
+    rgb(255, 251, 20) 0%,
+    rgb(231, 255, 17) 100%
   );
   padding: 16px 22px;
 }
@@ -98,7 +98,7 @@ h1 {
   background: linear-gradient(
     90deg,
     rgba(255, 118, 20, 1) 0%,
-    rgba(255, 84, 17, 1) 100%
+    rgb(255, 211, 17) 100%
   );
 
   padding: 16px;
@@ -109,8 +109,8 @@ h1 {
 .todo-row:nth-child(4n + 1) {
   background: linear-gradient(
     90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
+    rgb(41, 233, 175) 0%,
+    rgb(42, 216, 36) 100%
   );
 }
 
@@ -118,7 +118,7 @@ h1 {
   background: linear-gradient(
     90deg,
     rgba(255, 12, 241, 1) 0%,
-    rgba(250, 0, 135, 1) 100%
+    rgb(250, 0, 54) 100%
   );
 }
 
@@ -126,7 +126,7 @@ h1 {
   background: linear-gradient(
     90deg,
     rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
+    rgb(17, 81, 255) 100%
   );
 }
 
