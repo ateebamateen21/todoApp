@@ -15,16 +15,16 @@ To run this project, you will need to have Node.js and npm installed on your com
 1. Clone this repository
 ```bash
 git clone https://github.com/ateebamateen21/todoapp.git
-
+ ```
 
 2. Navigate into the directory
-cd todoapp
+```cd todoapp```
 
 3. Install the dependencies
-npm install
+```npm install```
 
 4. Run the app
-npm run dev
+```npm run dev```
 
 
 ## Usage
