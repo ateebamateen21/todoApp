@@ -7,12 +7,11 @@
 }
 
 body {
-  background: linear-gradient(
-    90deg,
-    rgb(185, 183, 201) 0%,
-    rgb(81, 83, 102) 100%
-  );
+  background: linear-gradient(90deg,
+      rgb(185, 183, 201) 0%,
+      rgb(81, 83, 102) 100%);
 }
+
 .todo-app {
   display: flex;
   flex-direction: column;
@@ -61,11 +60,9 @@ h1 {
   border-radius: 0 4px 4px 0;
   cursor: pointer;
   outline: none;
-  background: linear-gradient(
-    90deg,
-    rgb(154, 108, 245) 0%,
-    rgb(181, 91, 238) 100%
-  );
+  background: linear-gradient(90deg,
+      rgb(154, 108, 245) 0%,
+      rgb(181, 91, 238) 100%);
   color: #fff;
   text-transform: capitalize;
 }
@@ -75,11 +72,9 @@ h1 {
 }
 
 .todo-button.edit {
-  background: linear-gradient(
-    90deg,
-    rgb(255, 251, 20) 0%,
-    rgb(231, 255, 17) 100%
-  );
+  background: linear-gradient(90deg,
+      rgb(255, 251, 20) 0%,
+      rgb(231, 255, 17) 100%);
   padding: 16px 22px;
 }
 
@@ -95,11 +90,9 @@ h1 {
   align-items: center;
   margin: 4px auto;
   color: #fff;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 118, 20, 1) 0%,
-    rgb(255, 211, 17) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(255, 118, 20, 1) 0%,
+      rgb(255, 211, 17) 100%);
 
   padding: 16px;
   border-radius: 5px;
@@ -107,27 +100,21 @@ h1 {
 }
 
 .todo-row:nth-child(4n + 1) {
-  background: linear-gradient(
-    90deg,
-    rgb(41, 233, 175) 0%,
-    rgb(42, 216, 36) 100%
-  );
+  background: linear-gradient(90deg,
+      rgb(41, 233, 175) 0%,
+      rgb(42, 216, 36) 100%);
 }
 
 .todo-row:nth-child(4n + 2) {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 12, 241, 1) 0%,
-    rgb(250, 0, 54) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(255, 12, 241, 1) 0%,
+      rgb(250, 0, 54) 100%);
 }
 
 .todo-row:nth-child(4n + 3) {
-  background: linear-gradient(
-    90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgb(17, 81, 255) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(20, 159, 255, 1) 0%,
+      rgb(17, 81, 255) 100%);
 }
 
 .icons {
@@ -144,4 +131,43 @@ h1 {
 
 .edit-icon {
   color: #fff;
+}
+
+/* styling the confirmation modal */
+.modal-styles {
+  /* styles are like that of a pop centered in the screen and having gradients */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg,
+      rgb(185, 183, 201) 0%,
+      rgb(81, 83, 102) 100%);
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal-delete-icon {
+  /* styles for the delete icon */
+  top: 0;
+  right: 0;
+  margin: 10px;
+  background-color: #ec2626;
+  padding: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.modal-close-icon {
+  /* styles for the delete icon */
+  top: 0;
+  right: 0;
+  margin: 10px;
+  background-color: #26b4ec;
+  padding: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
 }

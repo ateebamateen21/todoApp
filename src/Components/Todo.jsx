@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TodoForm from './TodoForm';
 import { RiCloseCircleLine } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
+import ConfirmationModal from './ConfirmationModal';
 
 const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   const [edit, setEdit] = useState({
@@ -21,25 +22,55 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     return <TodoForm edit={edit} onSubmit={submitUpdate} />;
   }
 
+  //state to manage the modal
+
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [deleteTodoId, setDeleteTodoId] = useState(null);
+
+  const openDeleteModal = (id) => {
+    setDeleteModalOpen(true);
+    setDeleteTodoId(id);
+  };
+
+  const closeDeleteModal = () => {
+    setDeleteModalOpen(false);
+    setDeleteTodoId(null);
+  };
+
+
   return todos.map((todo, index) => (
-    <div
-      className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
-      key={index}
-    >
-      <div key={todo.id} onClick={() => completeTodo(todo.id)}>
-        {todo.text}
-      </div>
-      <div className='icons'>
-        <RiCloseCircleLine
-          onClick={() => removeTodo(todo.id)}
-          className='delete-icon'
+    <>
+      {deleteModalOpen && (
+        <ConfirmationModal
+          isOpen={deleteModalOpen}
+          onClose={closeDeleteModal}
+          onConfirm={() => {
+            removeTodo(deleteTodoId);
+            closeDeleteModal();
+          }}
         />
-        <TiEdit
-          onClick={() => setEdit({ id: todo.id, value: todo.text })}
-          className='edit-icon'
-        />
-      </div>
-    </div>
+      )}
+      {todos.map((todo, index) => (
+        <div
+          className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
+          key={index}
+        >
+          <div key={todo.id} onClick={() => completeTodo(todo.id)}>
+            {todo.text}
+          </div>
+          <div className="icons">
+            <RiCloseCircleLine
+              onClick={() => openDeleteModal(todo.id)}
+              className="delete-icon"
+            />
+            <TiEdit
+              onClick={() => setEdit({ id: todo.id, value: todo.text })}
+              className="edit-icon"
+            />
+          </div>
+        </div>
+      ))}
+    </>
   ));
 };
 
