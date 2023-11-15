@@ -3,6 +3,8 @@ import TodoForm from './TodoForm';
 import { RiCloseCircleLine } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
 import ConfirmationModal from './ConfirmationModal';
+import EditModal from './EditModal';
+
 
 const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   const [edit, setEdit] = useState({
@@ -18,15 +20,16 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     });
   };
 
+  const todoForm = <TodoForm edit={edit} onSubmit={submitUpdate} />;
   if (edit.id) {
-    return <TodoForm edit={edit} onSubmit={submitUpdate} />;
-  }
+    return todoForm;  }
 
-  //state to manage the modal
+  //state to manage the delete modal
+
 
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [deleteTodoId, setDeleteTodoId] = useState(null);
-
+  //function to open the delete modal
   const openDeleteModal = (id) => {
     setDeleteModalOpen(true);
     setDeleteTodoId(id);
@@ -36,6 +39,22 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     setDeleteModalOpen(false);
     setDeleteTodoId(null);
   };
+  //state to manage the edit modal
+  const [editModalOpen, setEditModalOpen] = useState(false);
+  const [editTodoId, setEditTodoId] = useState(null);
+  //function to open the edit modal
+  const openEditModal = (id) => {
+    setEditModalOpen(true);
+    setEditTodoId(id);
+  };
+
+  const closeEditModal = () => {
+    setEditModalOpen(false);
+    setEditTodoId(null);
+  };
+
+
+
 
 
   return todos.map((todo, index) => (
@@ -50,6 +69,19 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
           }}
         />
       )}
+
+      {editModalOpen && (
+        <EditModal
+          isOpen={editModalOpen}
+          onClose={closeEditModal}
+          onUpdate={(text) => {
+            updateTodo(editTodoId, { text });
+            closeEditModal();
+          }}
+        />
+      )}
+
+
       {todos.map((todo, index) => (
         <div
           className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
